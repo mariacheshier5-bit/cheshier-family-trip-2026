@@ -325,19 +325,16 @@
   .card.gold::before   { background: var(--gold); }
   .card.deep::before   { background: var(--teal-deep); }
 
-  /* ---------- FEATURE CARDS (trains, hotel) WIDER ---------- */
+  /* ---------- FEATURE CARDS (trains, hotel) ---------- */
   .card.feature {
-    margin-left: -24px;
-    margin-right: -24px;
     border-radius: 22px;
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.95),
-      inset 0 6px 14px -6px rgba(255,255,255,0.85),
-      0 -2px 6px rgba(255,250,235,0.6),
-      0 18px 36px -10px rgba(12,74,82,0.32),
-      0 8px 16px -6px rgba(31,122,131,0.22),
-      0 2px 6px rgba(12,74,82,0.08);
+    border: 2px solid var(--teal);
+    box-shadow: 0 6px 24px -4px rgba(31,122,131,0.22);
   }
+  .card.feature::before { display: none; }
+  .card.feature.rose { border-color: var(--rose); box-shadow: 0 6px 24px -4px rgba(232,141,155,0.25); }
+  .card.feature.gold { border-color: var(--gold); box-shadow: 0 6px 24px -4px rgba(216,168,91,0.25); }
+  .card.feature.deep { border-color: var(--teal-deep); box-shadow: 0 6px 24px -4px rgba(12,74,82,0.25); }
 
   /* ---------- VERTICAL CITYMAPPER BUTTON ---------- */
   .card.has-cm-rail { padding-right: 56px; }
@@ -563,6 +560,7 @@
     padding: 4px 12px;
     border-radius: 100px;
     font-weight: 600;
+    white-space: nowrap;
   }
   .day-badge.rose { background: var(--rose); }
   .day-meta {
@@ -1337,7 +1335,7 @@
     </div>
 
     <!-- TRAIN OUTBOUND CARD -->
-    <div class="card feature has-cm-rail">
+    <div class="card feature">
       <div class="leg-header">
         <span class="leg-badge">🚆 Outbound</span>
         <span class="leg-meta">Train 22 · Off-Peak</span>
@@ -1373,11 +1371,6 @@
       </div>
       <div class="note-row">⏰ <strong>Heads up:</strong> all train times are <strong>Chicago time (CT)</strong>. Your phone will switch over once you hit Dune Park — so <strong>9:33 AM CT = 10:33 AM your home time</strong> (arrival 10:44 CT = 11:44 home).</div>
       <div style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;">📍 151 Michigan Ave, Chicago, IL 60602</div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper">
-        <span class="cm-rail-icon">🗺️</span>
-        <span class="cm-rail-label">Citymapper</span>
-        <span class="cm-rail-arrow">↗</span>
-      </a>
     </div>
 
     <!-- 10:44 AM -->
@@ -1406,7 +1399,7 @@
     </div>
 
     <!-- HOTEL CARD -->
-    <div class="card gold feature has-cm-rail">
+    <div class="card gold feature">
       <div class="hotel-hero"><span>🌆</span></div>
       <div class="hotel-tag">Historic · Downtown</div>
       <div class="hotel-name">Hotel Knickerbocker<br>Chicago</div>
@@ -1440,11 +1433,6 @@
         <div class="amenity">🏛️ Historic Charm</div>
         <div class="amenity">🌆 Downtown</div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper">
-        <span class="cm-rail-icon">🗺️</span>
-        <span class="cm-rail-label">Citymapper</span>
-        <span class="cm-rail-arrow">↗</span>
-      </a>
     </div>
 
     <!-- DAY 1 · CONTINUED (Afternoon + Evening) -->
@@ -1703,7 +1691,7 @@
     </div>
 
     <!-- HYDE PARK TRANSIT CARD -->
-    <div class="card rose feature has-cm-rail">
+    <div class="card rose feature">
       <div class="leg-header">
         <span class="leg-badge return">🚆 To Hyde Park</span>
         <span class="leg-meta">Metra Electric · Train 231 Blue Island · $3.75</span>
@@ -1739,11 +1727,6 @@
       </div>
       <div class="note-row">Walk 6 min to Van Buren St. station, take Metra Electric (231 Blue Island) 8 stops to 59th St. (U. of Chicago), then walk 13 min to Harper Memorial Library.</div>
       <div style="margin-top:8px;padding:6px 10px;background:rgba(232,141,155,0.10);border-radius:8px;font-size:11px;color:#d4697a;font-weight:700;">📍 Harper Memorial Library · 1116 E 59th St, Chicago, IL 60637</div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper">
-        <span class="cm-rail-icon">🗺️</span>
-        <span class="cm-rail-label">Citymapper</span>
-        <span class="cm-rail-arrow">↗</span>
-      </a>
     </div>
 
     <!-- DAY 2 · CONTINUED (Hyde Park + Evening) -->
@@ -1785,7 +1768,7 @@
     </div>
 
     <!-- HYATT PLACE HOTEL CARD -->
-    <div class="card rose feature has-cm-rail">
+    <div class="card rose feature">
       <div class="hotel-hero" style="background: linear-gradient(135deg, #b85667, #e88d9b);"><span>✈️ 🚗</span></div>
       <div class="hotel-tag">Airport · ParkSleepFly</div>
       <div class="hotel-name" style="color:#2d0a14;">Hyatt Place<br>Chicago Midway</div>
@@ -1830,11 +1813,6 @@
         <div class="amenity">✈️ Airport Shuttle</div>
         <div class="amenity">📶 Wi-Fi</div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper">
-        <span class="cm-rail-icon">🗺️</span>
-        <span class="cm-rail-label">Citymapper</span>
-        <span class="cm-rail-arrow">↗</span>
-      </a>
     </div>
   </div>
 
