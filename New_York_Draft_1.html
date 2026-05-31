@@ -459,22 +459,19 @@
     color: var(--teal-deep);
   }
 
-  /* ---------- FEATURE CARDS (tickets, hotel, flights) WIDER ---------- */
+  /* ---------- FEATURE CARDS (tickets, hotel, flights) ---------- */
   .ticket-card,
   .card.feature {
-    margin-left: -24px;
-    margin-right: -24px;
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.95),
-      inset 0 6px 14px -6px rgba(255,255,255,0.85),
-      0 -2px 6px rgba(255,250,235,0.6),
-      0 18px 36px -10px rgba(12,74,82,0.32),
-      0 8px 16px -6px rgba(58,40,88,0.22),
-      0 2px 6px rgba(12,74,82,0.08);
+    border: 2px solid var(--teal);
+    box-shadow: 0 6px 24px -4px rgba(31,122,131,0.22);
   }
   .card.feature {
     border-radius: 22px;
   }
+  .card.feature::before, .ticket-card::before { display: none; }
+  .card.feature.rose, .ticket-card.rose { border-color: var(--rose); box-shadow: 0 6px 24px -4px rgba(232,141,155,0.25); }
+  .card.feature.gold, .ticket-card.gold { border-color: var(--gold); box-shadow: 0 6px 24px -4px rgba(216,168,91,0.25); }
+  .card.feature.plum, .ticket-card.plum { border-color: var(--plum-mid); box-shadow: 0 6px 24px -4px rgba(107,74,140,0.25); }
 
   /* ---------- TICKETS / SHOWS ---------- */
   .ticket-card {
@@ -828,6 +825,7 @@
     padding: 4px 12px;
     border-radius: 100px;
     font-weight: 600;
+    white-space: nowrap;
   }
   .day-badge.rose  { background: var(--rose); }
   .day-badge.amber { background: var(--amber); }
@@ -1415,11 +1413,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- FLIGHT OUTBOUND CARD -->
-    <div class="card plum feature has-cm-rail">
+    <div class="card plum feature">
       <div class="leg-header">
         <span class="leg-badge">✈️ Outbound</span>
         <span class="leg-meta">Flight #2801 · ~2h</span>
@@ -1455,7 +1453,6 @@
       </div>
       <div class="note-row">⏰ <strong>Early start:</strong> 5:20 AM CT departure — set alarms, leave Hyatt Place Midway no later than <strong>3:30 AM CT</strong> for security buffer.</div>
       <div style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;">📍 LaGuardia Airport, East Elmhurst, NY 11371</div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 1 · CONTINUED (Arrival in NYC) -->
@@ -1512,11 +1509,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- HOTEL CARD -->
-    <div class="card plum feature has-cm-rail">
+    <div class="card plum feature">
       <div class="hotel-hero"><span>🌃</span></div>
       <div class="hotel-tag">Brooklyn · Crown Heights</div>
       <div class="hotel-name">Hotel Mirage<br>Brooklyn</div>
@@ -1541,7 +1538,6 @@
         <div class="label">Paid</div>
         <div class="value">US$688.28<br><span style="font-size:10px;color:var(--muted);font-weight:400;">on Feb 6, 2026</span></div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 1 · CONTINUED (Brooklyn + Time Out Market + Midtown) -->
@@ -1749,11 +1745,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- GAYLE'S BROADWAY ROSE TICKET -->
-    <div class="ticket-card has-cm-rail">
+    <div class="ticket-card">
       <div class="ticket-top gayle">
         <span class="ticket-emoji">🌹</span>
         <div class="ticket-show-tag">★ Event · Thu Jun 11</div>
@@ -1781,7 +1777,6 @@
           <div class="ticket-order">★ Gayle's Broadway Rose</div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 1 · CONTINUED (Chess Showtime) -->
@@ -1798,11 +1793,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- CHESS TICKET -->
-    <div class="ticket-card has-cm-rail">
+    <div class="ticket-card">
       <div class="ticket-top chess">
         <span class="ticket-emoji">♟️</span>
         <div class="ticket-show-tag">★ Starring Lia Michelle &amp; Aaron Tveit</div>
@@ -1835,7 +1830,6 @@
           <div class="ticket-order">Order #99722169</div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 1 · CONTINUED (Wind Down) -->
@@ -1861,7 +1855,7 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 2: Jun 12 -->
@@ -1994,11 +1988,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- JUST IN TIME TICKET -->
-    <div class="ticket-card has-cm-rail">
+    <div class="ticket-card">
       <div class="ticket-top just-in-time">
         <span class="ticket-emoji">🎤</span>
         <div class="ticket-show-tag">★ Starring Jeremy Jordan · Fri Jun 12</div>
@@ -2031,7 +2025,6 @@
           <div class="ticket-order">Box Office #99394621</div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 2 · CONTINUED (Wind Down) -->
@@ -2073,7 +2066,7 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 3: Jun 13 -->
@@ -2110,11 +2103,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- FLIGHT RETURN CARD -->
-    <div class="card rose feature has-cm-rail">
+    <div class="card rose feature">
       <div class="leg-header">
         <span class="leg-badge return">✈️ Return</span>
         <span class="leg-meta">Flight #2882 · ~2h 20m</span>
@@ -2145,7 +2138,6 @@
       </div>
       <div class="note-row">Wheels up by late morning — plan to be at LaGuardia by <strong>9:00 AM ET</strong>.</div>
       <div style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;">📍 LaGuardia Airport, East Elmhurst, NY 11371</div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- DAY 3 · CONTINUED (Flight + Home) -->
@@ -2228,11 +2220,11 @@
           </div>
         </div>
       </div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <!-- RETURN TRAIN CARD -->
-    <div class="card gold feature has-cm-rail">
+    <div class="card gold feature">
       <div class="leg-header">
         <span class="leg-badge return">🚆 Home</span>
         <span class="leg-meta">South Shore Line · Off-Peak</span>
@@ -2262,7 +2254,6 @@
         </div>
       </div>
       <div style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;">📍 1068 W Dunes Hwy, Porter, IN 46304</div>
-      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
 
     <div class="card gold day-amber has-cm-rail">
@@ -2288,6 +2279,7 @@
           </div>
         </div>
       </div>
+          <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper"><span class="cm-rail-icon">🗺️</span><span class="cm-rail-label">Citymapper</span><span class="cm-rail-arrow">↗</span></a>
     </div>
   </div>
 
