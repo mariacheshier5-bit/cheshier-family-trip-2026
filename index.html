@@ -548,27 +548,39 @@
 
   /* ---------- ITINERARY ---------- */
   .day-header {
-    display: flex; align-items: center; gap: 10px;
-    margin: 4px 0 10px;
+    border-radius: 20px;
+    padding: 20px 22px;
+    margin: 36px 0 14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
+  .day-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 90% 50%, rgba(255,255,255,0.12), transparent 60%);
+  }
+  .day-header.teal-day  { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%); }
+  .day-header.rose-day  { background: linear-gradient(135deg, #c4566a 0%, var(--rose) 100%); }
   .day-badge {
-    background: var(--teal-deep);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: white;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 100px;
-    font-weight: 600;
-    white-space: nowrap;
+    letter-spacing: 1px;
+    line-height: 1;
+    position: relative;
   }
-  .day-badge.rose { background: var(--rose); }
   .day-meta {
     font-size: 12px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.78);
     font-weight: 500;
+    position: relative;
+    letter-spacing: 0.3px;
   }
-  .day-meta strong { color: var(--teal); }
+  .day-meta strong { color: white; font-weight: 700; }
 
   .timeline {
     display: flex; flex-direction: column; gap: 0;
@@ -1303,11 +1315,11 @@
 
     <!-- DAY 1 -->
     <!-- DAY 1 · 7:45 AM + 9:33 AM connected -->
+    <div class="day-header teal-day">
+      <div class="day-badge">Day 01</div>
+      <div class="day-meta"><strong>Tuesday, June 9</strong> · Chicago</div>
+    </div>
     <div class="card has-cm-rail">
-      <div class="day-header">
-        <span class="day-badge">Day 01</span>
-        <span class="day-meta"><strong>Tue, June 9</strong> · 10 stops</span>
-      </div>
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-line"><div class="tl-dot">➡️</div><div class="tl-conn"></div></div>
@@ -1545,11 +1557,11 @@
     </div>
 
     <!-- DAY 2 -->
+    <div class="day-header rose-day">
+      <div class="day-badge">Day 02</div>
+      <div class="day-meta"><strong>Wednesday, June 10</strong> · Chicago</div>
+    </div>
     <div class="card rose day-2 has-cm-rail">
-      <div class="day-header">
-        <span class="day-badge rose">Day 02</span>
-        <span class="day-meta"><strong>Wed, June 10</strong> · 12 stops</span>
-      </div>
 
       <div class="timeline">
         <div class="tl-item">
