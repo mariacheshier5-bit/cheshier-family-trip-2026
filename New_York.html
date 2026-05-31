@@ -813,28 +813,40 @@
 
   /* ---------- ITINERARY ---------- */
   .day-header {
-    display: flex; align-items: center; gap: 10px;
-    margin: 4px 0 10px;
+    border-radius: 20px;
+    padding: 20px 22px;
+    margin: 36px 0 14px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
+  .day-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 90% 50%, rgba(255,255,255,0.12), transparent 60%);
+  }
+  .day-header.plum-day  { background: linear-gradient(135deg, #2a1a42 0%, var(--plum-mid) 100%); }
+  .day-header.rose-day  { background: linear-gradient(135deg, #c4566a 0%, var(--rose) 100%); }
+  .day-header.amber-day { background: linear-gradient(135deg, #7a4a1a 0%, var(--amber) 100%); }
   .day-badge {
-    background: var(--plum);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: white;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 100px;
-    font-weight: 600;
-    white-space: nowrap;
+    letter-spacing: 1px;
+    line-height: 1;
+    position: relative;
   }
-  .day-badge.rose  { background: var(--rose); }
-  .day-badge.amber { background: var(--amber); }
   .day-meta {
     font-size: 12px;
-    color: var(--muted);
+    color: rgba(255,255,255,0.78);
     font-weight: 500;
+    position: relative;
+    letter-spacing: 0.3px;
   }
-  .day-meta strong { color: var(--plum-mid); }
+  .day-meta strong { color: white; font-weight: 700; }
 
   .timeline { display: flex; flex-direction: column; gap: 0; }
   .tl-item { display: flex; gap: 14px; }
@@ -1388,11 +1400,11 @@
     </div>
 
     <!-- DAY 1: Jun 11 -->
+    <div class="day-header plum-day">
+      <div class="day-badge">Day 01</div>
+      <div class="day-meta"><strong>Thursday, June 11</strong> · Brooklyn + Broadway</div>
+    </div>
     <div class="card plum has-cm-rail">
-      <div class="day-header">
-        <span class="day-badge">Day 01</span>
-        <span class="day-meta"><strong>Thu, June 11</strong> · Brooklyn day + Broadway double-header</span>
-      </div>
 
       <div class="timeline">
         <div class="tl-item">
@@ -1864,11 +1876,11 @@
     </div>
 
     <!-- DAY 2: Jun 12 -->
+    <div class="day-header rose-day">
+      <div class="day-badge">Day 02</div>
+      <div class="day-meta"><strong>Friday, June 12</strong> · Sightseeing + Jeremy</div>
+    </div>
     <div class="card rose day-rose has-cm-rail">
-      <div class="day-header">
-        <span class="day-badge rose">Day 02</span>
-        <span class="day-meta"><strong>Fri, June 12</strong> · Sightseeing + Jeremy night</span>
-      </div>
 
       <div class="timeline">
         <div class="tl-item">
@@ -2079,11 +2091,11 @@
     </div>
 
     <!-- DAY 3: Jun 13 -->
+    <div class="day-header amber-day">
+      <div class="day-badge">Day 03</div>
+      <div class="day-meta"><strong>Saturday, June 13</strong> · Fly Home</div>
+    </div>
     <div class="card gold day-amber has-cm-rail">
-      <div class="day-header">
-        <span class="day-badge amber">Day 03</span>
-        <span class="day-meta"><strong>Sat, June 13</strong> · Fly Home</span>
-      </div>
 
       <div class="timeline">
         <div class="tl-item">
