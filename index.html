@@ -949,6 +949,128 @@
     50%     { transform: scaleY(1.7); background: rgba(255,200,120,0.85); }
   }
 
+  /* ---------- MOVIE TICKET ---------- */
+  .movie-ticket {
+    background: var(--paper);
+    border-radius: 18px;
+    overflow: visible;
+    box-shadow: 0 4px 20px rgba(12,74,82,0.12);
+    border: 2px solid var(--teal);
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .ticket-main {
+    padding: 20px 20px 16px;
+    background: var(--paper);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .ticket-badge-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .ticket-badge {
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--teal);
+    background: var(--mint);
+    border: 1px solid var(--teal-soft);
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .ticket-rating {
+    font-size: 10px; font-weight: 700; color: var(--muted);
+    border: 1px solid var(--teal-soft);
+    padding: 3px 8px; border-radius: 4px;
+  }
+  .ticket-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700; color: var(--teal-deep);
+    line-height: 1.15; margin-bottom: 4px;
+  }
+  .ticket-venue {
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.5px; margin-bottom: 16px;
+  }
+  .ticket-time-row {
+    display: flex; align-items: center; gap: 0;
+    background: var(--foam);
+    border-radius: 12px; overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .ticket-time-block {
+    flex: 1; text-align: center; padding: 12px 8px;
+  }
+  .ticket-time-block + .ticket-time-block {
+    border-left: 1px solid var(--teal-soft);
+  }
+  .ticket-time-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .ticket-time-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); line-height: 1;
+  }
+  .ticket-time-sub {
+    font-size: 10px; color: var(--muted); margin-top: 3px;
+  }
+  .ticket-divider {
+    position: relative;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 -4px;
+    padding: 0 4px;
+  }
+  .ticket-divider::before, .ticket-divider::after {
+    content: '';
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid var(--teal);
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .ticket-divider::before { left: -13px; }
+  .ticket-divider::after  { right: -13px; }
+  .ticket-divider-line {
+    flex: 1;
+    border-top: 2px dashed rgba(31,122,131,0.35);
+    margin: 0 18px;
+  }
+  .ticket-stub {
+    padding: 14px 20px 18px;
+    background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 60%, var(--teal-mid) 100%);
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .ticket-stub-item { }
+  .ticket-stub-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    margin-bottom: 3px;
+  }
+  .ticket-stub-val {
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.9);
+  }
+  .ticket-stub-val.gold { color: var(--gold); }
+  .ticket-addr {
+    margin: 0 20px 16px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    font-size: 11px; color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 8px; cursor: pointer; user-select: none;
+  }
+  .ticket-addr:active { background: rgba(255,255,255,0.2); }
+
   /* ---------- FOOTER ---------- */
   .footer {
     text-align: center;
@@ -1403,7 +1525,6 @@
               </div>
             </div>
             <div onclick="copyAddr(this,'163 East Walton Place, Chicago, IL 60611')" style="margin-top:6px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 163 East Walton Place, Chicago, IL 60611</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
-            <div onclick="copyAddr(this,'163 East Walton Place, Chicago, IL')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 163 East Walton Place, Chicago, IL</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
           </div>
         </div>
       </div>
@@ -1504,45 +1625,100 @@
         <div class="tl-item">
           <div class="tl-line"><div class="tl-dot">🍰</div><div class="tl-conn"></div></div>
           <div class="tl-content">
-            <span class="tl-time">4:00 PM</span>
+            <span class="tl-time">5:00 PM</span>
             <div class="tl-title">Cheesecake Factory · Dinner</div>
             <div class="tl-sub">Happy hour <strong>4–6 PM</strong> — eat early, eat well, save a little.</div>
             <div onclick="copyAddr(this,'875 N Michigan Ave, Chicago, IL 60611')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 875 N Michigan Ave, Chicago, IL 60611</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
           </div>
-
         </div>
         <div class="tl-item">
-          <div class="tl-line"><div class="tl-dot">✔</div><div class="tl-conn"></div></div>
+          <div class="tl-line"><div class="tl-dot">🚇</div><div class="tl-conn"></div></div>
           <div class="tl-content">
-            <span class="tl-time">6:00 PM</span>
-            <div class="tl-title">Choose Your Adventure</div>
-            <div class="tl-sub">How about a walk or some shopping? If you're feeling tired, go back to the hotel and snuggle up with a good movie!</div>
-            <div class="tl-alt">
-              <span class="tl-alt-label">5:30-7:00</span>
-              <strong>Water Tower Place</strong> — Check out the shops at Water Tower Place. It's a short walk from the hotel and a nice way to stretch your legs after dinner. Browse the stores, maybe grab a coffee or dessert, and enjoy the lively atmosphere.
-              <div onclick="copyAddr(this,'835 N Michigan Ave, Chicago, IL 60611')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 835 N Michigan Ave, Chicago, IL 60611</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
+            <span class="tl-time">6:55 PM</span>
+            <div class="tl-title">Transit to Regal Webster Place</div>
+            <div class="tl-sub">Walk 8 min to Chicago (Red) → Red Line (Howard) 3 stops to Fullerton → walk 19 min to theater. Leave 6:55 PM, arrive 7:32 PM. $2.50 · 36 min total.</div>
+            <div style="margin-top:8px;padding:7px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;">
+              <div class="transit-badges">
+                <span class="subway-badge line-Red">R</span>
               </div>
-            <div class="tl-alt">
-              <span class="tl-alt-label">5:30-8:00</span>
-              <strong>Navy Pier Wandering</strong> — If you didn't go to Navy Pier earlier, it's a nice spot for an evening stroll. Walk along the pier, enjoy the lake breeze, and maybe grab some dessert from one of the vendors. The butterfly house is also in season and is only $20 to visit if you're up for a little indoor nature time.
-              <div onclick="copyAddr(this,'600 E Grand Ave, Chicago, IL 60611')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 600 E Grand Ave, Chicago, IL 60611</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
-              </div>
-            <div class="tl-alt">
-              <span class="tl-alt-label">7:15</span>
-              <strong>Movie</strong> — Watch The Mandalorian and Grogu at the AMC Theater AMC River East 21, just a short walk from the hotel. It's a cozy way to end the evening and relax after a day of exploring.
-              <div onclick="copyAddr(this,'322 E Illinois St, Chicago, IL 60611')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 322 E Illinois St, Chicago, IL 60611</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
             </div>
-            <div class="tl-alt">
-              <span class="tl-alt-label">7:30-8:30</span>
-              <strong>Navy Pier Yoga</strong> — If the weather's nice and you're up for a little activity, check out the free yoga sessions at Navy Pier. It's a relaxing way to unwind with great views of the lake.
-              <div onclick="copyAddr(this,'600 E Grand Ave, Chicago, IL 60611')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 600 E Grand Ave, Chicago, IL 60611</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
-              </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://citymapper.com/" target="_blank" rel="noopener noreferrer" class="cm-rail" aria-label="Open in Citymapper">
+        <span class="cm-rail-icon">🗺️</span>
+        <span class="cm-rail-label">Citymapper</span>
+        <span class="cm-rail-arrow">↗</span>
+      </a>
+    </div>
+
+    <!-- MOVIE TICKET CARD -->
+    <div class="movie-ticket">
+      <div class="ticket-main">
+        <div class="ticket-badge-row">
+          <span class="ticket-badge">🎬 Now Showing · Tue Jun 9</span>
+          <span class="ticket-rating">PG</span>
+        </div>
+        <div class="ticket-title">The Breadwinner</div>
+        <div class="ticket-venue">Regal Webster Place · Screen 11 · Chicago, IL</div>
+        <div class="ticket-time-row">
+          <div class="ticket-time-block">
+            <div class="ticket-time-label">Showtime</div>
+            <div class="ticket-time-val">7:40 PM</div>
+            <div class="ticket-time-sub">Tue, Jun 9</div>
+          </div>
+          <div class="ticket-time-block">
+            <div class="ticket-time-label">Runtime</div>
+            <div class="ticket-time-val">1h 35m</div>
+            <div class="ticket-time-sub">ends ~9:15 PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-divider">
+        <div class="ticket-divider-line"></div>
+      </div>
+      <div class="ticket-stub">
+        <div class="ticket-stub-item">
+          <div class="ticket-stub-label">Seat</div>
+          <div class="ticket-stub-val gold">D5</div>
+        </div>
+        <div class="ticket-stub-item">
+          <div class="ticket-stub-label">Order</div>
+          <div class="ticket-stub-val">#WSNPFZN</div>
+        </div>
+        <div class="ticket-stub-item">
+          <div class="ticket-stub-label">Seat</div>
+          <div class="ticket-stub-val gold">D6</div>
+        </div>
+        <div class="ticket-stub-item">
+          <div class="ticket-stub-label">Order</div>
+          <div class="ticket-stub-val">#WN4ML3K</div>
+        </div>
+        <div style="grid-column:1/-1;">
+          <div class="ticket-addr" onclick="copyAddr(this,'1471 W. Webster Avenue, Chicago, IL 60614')" style="margin:4px 0 0;">
+            <span>📍 1471 W. Webster Avenue, Chicago, IL 60614</span>
+            <span class="copy-icon" style="font-size:13px;flex-shrink:0;">⎘</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POST-MOVIE -->
+    <div class="card has-cm-rail">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-line"><div class="tl-dot">🚗</div><div class="tl-conn"></div></div>
+          <div class="tl-content">
+            <span class="tl-time">9:40 PM</span>
+            <div class="tl-title">Uber back to Hotel Knickerbocker</div>
+            <div class="tl-sub">UberX · Regal Webster Place → Hotel Knickerbocker · ~$21.95 · Reserved pickup 9:40 PM.</div>
+            <div onclick="copyAddr(this,'163 East Walton Place, Chicago, IL')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 163 East Walton Place, Chicago, IL</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-line"><div class="tl-dot">🌙</div></div>
           <div class="tl-content">
-            <span class="tl-time">8:30 PM</span>
+            <span class="tl-time">~10:00 PM</span>
             <div class="tl-title">Bedtime</div>
             <div class="tl-sub">Early checkout tomorrow — get the rest in for a full day of fun tomorrow.</div>
             <div onclick="copyAddr(this,'163 East Walton Place, Chicago, IL')" style="margin-top:8px;padding:6px 10px;background:var(--foam);border-radius:8px;font-size:11px;color:var(--teal);font-weight:700;;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;user-select:none;"><span>📍 163 East Walton Place, Chicago, IL</span><span class="copy-icon" style="font-size:13px;opacity:0.5;flex-shrink:0;">⎘</span></div>
